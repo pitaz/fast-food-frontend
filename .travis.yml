@@ -1,0 +1,19 @@
+
+env:
+  global:
+    - CC_TEST_REPORTER_ID=c6700476fa3bbcf6a55831b44c0164f5a67caaa9aaa7f68461c289f9cfe28077
+language: node_js
+node_js:
+  - "node"
+before_script:
+ - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+ - chmod +x ./cc-test-reporter
+ - ./cc-test-reporter before-build
+script:
+  - npm install
+  - npm run test
+after_success: 
+  - npm run coveralls
+cache:
+  directories:
+    - "node_modules"
