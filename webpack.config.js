@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: 'index_bundle.js',
+    filename: 'bundle.js',
     publicPath: '/',
   },
   module: {
@@ -30,11 +30,7 @@ module.exports = {
         loader: 'file-loader?name=images/[name].[ext]',
       },
       {
-        test: /(\.css)$/,
-        loaders: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.s(a|c)ss$/,
+        test: /\.s?(a|c)ss$/,
         use: [{
           loader: 'style-loader',
         }, {
