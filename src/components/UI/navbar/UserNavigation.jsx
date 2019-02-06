@@ -26,7 +26,7 @@ class UserNavigation extends Component {
 }
 UserNavigation.propTypes = {
  role: PropTypes.string,
- logout: PropTypes.func
+ logout: PropTypes.func,
 };
 
 const mapStateToProps = state => ({

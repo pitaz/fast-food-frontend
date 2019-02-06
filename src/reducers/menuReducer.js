@@ -12,6 +12,19 @@ export default (state = initialState, action) => {
         ...state,
         menu: action.menu
       };
+
+      case types.GET_SINGLE_MENU:
+      return {
+        ...state,
+        singleMenu: action.menu
+      };
+
+    case types.GET_SINGLE_MENU_FAIL:
+      return {
+				...state,
+				singleMenu: null,
+				error: action.error
+			};
 			default: return state;
   }
 };
