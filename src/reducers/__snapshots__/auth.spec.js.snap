@@ -31,3 +31,11 @@ Object {
   "user": undefined,
 }
 `;
+
+exports[`select_reducer returns the correct state 3`] = `
+Object {
+  "error": Object {},
+  "isAuthenticated": false,
+  "user": Object {},
+}
+`;

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component test should match the snapshot 1`] = `
+<footer>
+  <p>
+    Designed by Peter Odekwo
+  </p>
+</footer>
+`;

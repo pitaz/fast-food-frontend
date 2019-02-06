@@ -27,7 +27,7 @@ class Header extends Component {
         <div className="right">
           <div className="nav-items" id="items-right">
             {
-              // auth.isAuthenticated ? <UserNavigation /> : <GuestNavigation />
+              auth.isAuthenticated ? <UserNavigation /> : <GuestNavigation />
             }
           </div>
         </div>

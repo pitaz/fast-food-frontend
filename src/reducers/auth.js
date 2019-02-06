@@ -4,6 +4,7 @@ import {
   SIGN_UP_ERRORS,
   REMOVE_ERROR_MESSAGE,
   SET_CURRENT_USER_FAIL,
+	LOG_OUT_USER
 } from "../actions/types";
 
 const initialState = {
@@ -39,6 +40,12 @@ export default (state = initialState, action) => {
 			case REMOVE_ERROR_MESSAGE:
       return {
 				error: {}
+			};
+
+			case LOG_OUT_USER:
+			return {
+				...state,
+				...initialState
 			};
 			default: return state;
   }
