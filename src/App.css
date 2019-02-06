@@ -1,40 +1,662 @@
-img {
-    width: 100%;
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.nav-items {
+  flex-grow: 0;
+}
+.nav > .nav-brand {
+  text-align: center;
+  padding: 10px 15px;
+  transition: 0.5s;
+  font-size: 35px;
+  font-family: "Caviar Dreams", serif;
+}
+.nav > .nav-brand a {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 35px;
+  font-family: "Caviar Dreams", serif;
+}
+
+.nav > .left {
+  display: flex;
+  flex-direction: row;
+  padding: 35px 10px;
+  flex-grow: 3;
+  transition: 0.5s;
+  font-family: "Caviar Dreams", serif;
+}
+
+.nav > .left a {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: 0.5s;
+  font-size: 16px;
+  font-family: "Caviar Dreams", serif;
+}
+
+.nav > .right {
+  display: flex;
+  flex-direction: row;
+  padding: 35px 10px;
+}
+
+.nav > .right a {
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: 0.5s;
+  font-size: 16px;
+  font-family: "Caviar Dreams", serif;
+}
+
+.jumbo-section {
+  position: relative;
+  margin: auto;
+  transition: 0.7s ease;
+}
+
+.jb-content-wrapper {
+  transition: 0.7s ease;
+}
+
+.jb-content-wrapper img {
+  width: 100%;
+}
+
+.jb-content-wrapper p {
+  color: #f2f2f2;
+  font-size: 3.438em;
+  padding: 8px 12px;
+  position: absolute;
+  top: 300px;
+  width: 100%;
+  text-align: center;
+  transition: 0.7s;
+  font-family: "Caviar Dreams", sans-serif;
+}
+.wrapper {
+  width: 50%;
+  padding: 10px 5px;
+  margin: 150px auto;
+  transition: 0.7s ease;
+}
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.71);
+  position: fixed;
+  left: -250px;
+  z-index: 1;
+  top: 55px;
+  padding-top: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.8), 0 6px 6px 0 rgba(0, 0, 0, 0.79);
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 8px 20px;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size: 18px;
+  font-family: "Caviar Dreams", sans-serif;
+}
+.sidebar.active {
+  left: -250px;
+}
+.error{
+  color:rgb(255, 0, 0);
+  font-size: 15px;
+  padding: 10px; 
+  font-family: sans-serif;
+  transition: 0.8s ease
+}
+.error-cont {
+  display: none;
+  padding: 20px;
+  color: #ffffff;
+  transition: 0.3s ease;
+  font-family: "Caviar Dreams", sans-serif
+}
+.menu-icon {
+  display: none;
+}
+
+.menu-wrapper {
+  display: inline-block;
+  cursor: pointer;
+}
+.menu img {
+  width: 90%;
+  height: 250px;
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 0 10px auto;
+}
+
+.menu-text {
+  text-align: center;
+  font-family: "Caviar Dreams", sans-serif;
+  padding: 20px;
+  font-size: 32px;
+  font-style: normal;
+  margin-top: 100px;
+}
+.menu-services-txt {
+  text-align: justify;
+  font-family: "Caviar Dreams", sans-serif;
+  padding: 20px;
+  font-size: 18px;
+  font-style: normal;
+  margin-top: 10px;
+}
+
+
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+.grid-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-content: flex-start;
+  /* align-content: stretch; */
+  justify-content: start;
+  margin-left: 120px;
+  /* margin: 120px 0 10px 20px; */
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
+  align-items: center;
+  width: 80;
+}
+
+.order-details {
+  width: 30%;
+}
+
+.order-details img {
+  width: 90%;
+  height: 250px;
+  border-radius: 20px;
+  padding: 10px 5px;
+  margin: 0 10px auto;
+}
+.order-details h3 {
+  font-family: "Caviar Dreams", sans-serif;
+  padding: 10px 20px 0;
+}
+.order-details p {
+  font-family: "Caviar Dreams", sans-serif;
+  padding: 20px 20px 0;
+}
+.order-details button, .bt {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(175, 22, 22);
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+  font-size: 18px;
+  margin: 20px;
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  text-decoration: none;
+  padding: 8px;
+  color: white;
+  background-color: rgb(175, 22, 22);
+  text-align: center;
+  cursor: pointer;
+  width: 40%;
+  font-size: 18px;
+  margin: 20px;
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+.welcome-cnt {
+  margin: 50px 20px 50px 20px;
+}
+.msg {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+.welcome-msg img {
+  width: 30%;
+  height: 250px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px 10px;
+}
+
+.welcome-msg #header {
+  font-size: 38px;
+  text-align: center;
+  font-family: "Lucida Calligraphy", serif;
+  color: red;
+}
+
+.welcome-msg #msg-body {
+  text-align: center;
+  font-family: "Caviar Dreams", sans-serif;
+  padding: 20px;
+}
+
+.welcome-msg #sub-header {
+  font-size: 28px;
+  text-align: center;
+  font-family: "Caviar Dreams", sans-serif;
+}
+.parallax {
+  min-height: 300px;
+  width: 100%;
+  background: url("/src/images/beef-bread-burger-156114.jpg") no-repeat fixed
+    center;
+  background-size: cover;
+}
+.parallax2 {
+  min-height: 300px;
+  width: 100%;
+  background: url("/src/images/blur-breakfast-chef-262978.jpg") no-repeat fixed
+    center;
+  background-size: cover;
+}
+.content-01 p {
+  text-align: center;
+  font-size: 35px;
+  padding: 50px;
+  color: #fff;
+}
+.content-01 p span {
+  background-color: #333;
+}
+.table-w {
+  overflow-x: auto;
+}
+
+table {
+  display: table;
+  /* width: 80%; */
+  border: 1px solid black;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 18px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color: #af1e17;
+  color: white;
+}
+.pagination {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 18px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: #af1e17;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px 18px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: "Caviar Dreams", sans-serif;
+  height: 80px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* background-color: rgba(54, 53, 53, 0.993); */
+}
+
+.card-header {
+  font-family: Calligraffiti, sans-serif;
+  text-align: center;
+  /* margin: 5px 0 3px 0; */
+  background-color: rgba(54, 53, 53, 0.993);
+}
+
+.card-header p {
+  color: #fff;
+  font-size: 35px;
+  margin-bottom: 10px;
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+.card-content {
+  padding: 0 16px;
+}
+.card-content h5 {
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+.card-content a {
+  color: red;
+}
+
+label {
+  font-family: "Caviar Dreams", sans-serif;
+}
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+button:hover,
+a:hover {
+  opacity: 0.7;
+}
+.wrapper-add-food {
+  max-width: 400px;
+  padding: 10px 5px;
+  margin: 150px auto;
+  transition: 0.7s ease;
+}
+.tb-btn {
+  border: none;
+  outline: 0;
+  display: inline-flex;
+  padding: 5px;
+  margin: 2px;
+  text-decoration: none;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.card-wrapper {
+  width: 40%;
+  padding: 10px 5px;
+  transition: 0.7s ease;
+  margin: 55px auto;
+}
+
+.card-wrapper img {
+  width: 100%;
+  padding: 10px;
+}
+.card-wrapper h3,
+p,
+label {
+  font-family: "Caviar Dreams";
+  padding: 10px;
+}
+input[type="number"] {
+  padding: 12px 20px;
+  width: 60%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.danger {
+  background-color: rgb(173, 24, 24);
+}
+
+.success {
+  background-color: rgb(32, 90, 32);
+}
+.default {
+  background-color: #000;
+}
+footer {
+  background-color: rgb(209, 209, 209);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.7rem;
+}
+footer p {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1.6rem;
+  text-align: center;
+  font-family: "Caviar Dreams", sans-serif;
+}
+
+select[name="filter"] {
+  background-color: #dcdde1;
+  color: #333333;
+  font-size: 1rem;
+  border-radius: 3px;
+  padding: 5px;
+  margin-left: 155px;
+  font-family: "Caviar Dreams", sans-serif;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-family: "Caviar Dreams", sans-serif;
+  transition: 0.7s ease;
+  margin-right: 20px;
+}
+.dropdown a {
+  text-decoration: none;
+  color: white;
+  padding: 15px 10px;
+  font-family: "Caviar Dreams", sans-serif;
+  transition: 0.7s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown .dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: "Caviar Dreams", serif;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.cursor {
+  cursor: pointer;
+}
+.table {
+  display: table;
+  /* width: 80%; */
+  border: 1px solid black;
+}
+.table-header {
+  display: table-row;
+  background-color: #af1e17;
+  font-family: "Caviar Dreams", serif;
+  color: white;
+}
+.table-row {
+  display: table-row;
+  font-family: "Caviar Dreams", serif;
+}
+.table-cell {
+  display: table-cell;
+}
+.nav .nav-brand img {
+  width: 120px;
+  transition: 0.7s;
+}
+.container {
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 970px) {
+  .nav .nav-items a {
+    visibility: hidden;
+    display: none;
   }
-  
-  .landing {
-    position: relative;
-    background: url('./images/showcase.jpg') no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    margin-top: -24px;
-    margin-bottom: -50px;
+  .nav .nav-brand img {
+    width: 80px;
+    transition: 0.7s;
   }
-  
-  .landing-inner {
-    padding-top: 80px;
-  }
-  
-  .dark-overlay {
-    background-color: rgba(0, 0, 0, 0.7);
+
+  .jb-content-wrapper p {
+    color: #f2f2f2;
+    font-size: 3em;
+    padding: 8px 12px;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 100px;
     width: 100%;
-    height: 100%;
+    text-align: center;
+    transition: 0.7s;
+    font-family: "Caviar Dreams", sans-serif;
   }
-  
-  .card-form {
-    opacity: 0.9;
+
+  .sidebar {
+    left: -250px;
+    transition: 0.5s;
   }
-  
-  .latest-profiles-img {
-    width: 40px;
-    height: 40px;
+
+  .sidebar.active {
+    left: 0;
+    transition: 0.5s;
   }
-  
-  .form-control::placeholder {
-    color: #bbb !important;
+  .menu-icon {
+    display: inline-block;
+    color: #f0f0f0;
+    cursor: pointer;
   }
-  
+}
+
+@media only screen and (max-width: 870px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+  .order-details {
+    width: 100%
+  }
+  .card-wrapper {
+    width: 90%;
+  }
+  .nav .nav-items a {
+    visibility: hidden;
+    display: none;
+  }
+  .welcome-img {
+    width: 100px;
+    margin: 5px 0 auto;
+  }
+  .grid-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20px
+  }
+  .wrapper {
+    width: 90%;
+    padding: 10px 5px;
+    transition: 0.7s ease;
+    margin: 70px auto;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .jumbo-section .jb-content-wrapper p {
+    font-size: large;
+  }
+}
