@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/routes/routes.jsx</title>
+    <title>Code coverage report for src/actions/menu.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">All files</a> / <a href="index.html">src/routes</a> routes.jsx
+      <a href="../../index.html">All files</a> / <a href="index.html">src/actions</a> menu.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">55.56% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>5/9</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>4/6</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -66,58 +66,52 @@
 21
 22
 23
-24
-25
-26</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+24</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import { Route, Switch } from 'react-router-dom';
-import ReduxToastr from 'react-redux-toastr';
-import Landing from '../components/Pages/Landing.jsx';
-import Menu from "../components/Pages/Menu.jsx";
-import Header from '../components/UI/header/Header.jsx';
-import Footer from '../components/UI/footer/Footer.jsx';
-import SignIn from "../components/Pages/SignIn.jsx";
-import SignUp from "../components/Pages/SignUp.jsx";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import axios from 'axios';
+import * as types from './types';
 &nbsp;
-const routes = () =&gt; (
-    &lt;div&gt;
-      &lt;Header /&gt;
-      &lt;Switch&gt;
-        &lt;Route exact path='/' component={Landing} /&gt;
-        &lt;Route exact path='/menu' component={Menu} /&gt;
-        &lt;Route exact path='/signin' component={SignIn} /&gt;
-        &lt;Route exact path='/signup' component={SignUp} /&gt;
-      &lt;/Switch&gt;
-      &lt;Footer /&gt;
-      &lt;ReduxToastr /&gt;
-    &lt;/div&gt;
-);
+export const getMeals = <span class="fstat-no" title="function not covered" >me</span>nu =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  type: types.GET_MEALS,
+  menu,
+});
+export const getMealsError = <span class="fstat-no" title="function not covered" >er</span>rors =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  type: types.GET_MEALS,
+  errors,
+});
 &nbsp;
-export default routes;
+const fetchMeal = () =&gt; (dispatch) =&gt; {
+	return axios.get('https://fast-food-pitaz.herokuapp.com/api/v1/menu').then(
+<span class="fstat-no" title="function not covered" >		(r</span>es) =&gt; {
+<span class="cstat-no" title="statement not covered" >      dispatch(getMeals(res.data.data.items));</span>
+		}
+	).catch(<span class="fstat-no" title="function not covered" >(e</span>rror) =&gt; {
+<span class="cstat-no" title="statement not covered" >		dispatch(getMealsError(error.response.data));</span>
+	});
+};
+&nbsp;
+export default fetchMeal;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->

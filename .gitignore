@@ -6,3 +6,9 @@
 
 # production
 /dist
+
+# env
+.env
+
+# nyc
+.nyc_output
