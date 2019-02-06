@@ -12,6 +12,12 @@ module.exports = {
     'src/**/*.{js,jsx}',
     '!public/*.{js}',
     '!src/index.jsx',
+    "!**/node_modules/**",
+    "!**/src/index.jsx",
+    "!**/src/utils/**",
+    "!**/src/validations/**",
+    "!**/src/store/configureStore.js",
+    "!**/index.js"
   ],
 
   collectCoverage: true,
