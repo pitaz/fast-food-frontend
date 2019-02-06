@@ -7,8 +7,8 @@
     "start": "node index.js",
     "start:dev": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production",
-    "test": "jest --coverage",
-    "test:watch": "jest --watch",
+    "test": "nyc jest --coverage --updateSnapshot",
+    "test:watch": "nyc jest --coverage --watchAll",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
   },
   "repository": {
@@ -56,8 +56,10 @@
     "is-empty": "^1.2.0",
     "istanbul": "^0.4.5",
     "jest": "^23.6.0",
+    "jest-localstorage-mock": "^2.4.0",
     "jsonwebtoken": "^8.4.0",
     "mini-css-extract-plugin": "^0.5.0",
+    "moxios": "^0.4.0",
     "node-sass": "^4.11.0",
     "nyc": "^13.1.0",
     "qs": "^6.6.0",
@@ -77,24 +79,5 @@
     "webpack": "^4.28.1",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "<rootDir>__tests__/setup/setupEnzyme.js",
-    "collectCoverage": true,
-    "testMatch": [
-      "**/*.test.js?(x)"
-    ],
-    "collectCoverageFrom": [
-      "src/**/**/*.js?(x)",
-      "src/*.jsx",
-      "src/**/*.jsx"
-    ],
-    "testPathIgnorePatterns": [
-      "<rootDir>/__tests__/setup/"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir/src/__mocks__/fileMock.js",
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
   }
 }
