@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src/components/UI/header/Header.jsx</title>
+    <title>Code coverage report for src/components/Pages/Menu.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../../../../prettify.css" />
-    <link rel="stylesheet" href="../../../../base.css" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../../../../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,28 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../../../index.html">All files</a> / <a href="index.html">src/components/UI/header</a> Header.jsx
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/components/Pages</a> Menu.jsx
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">30% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>3/10</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">37.5% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>3/8</span>
       </div>
     </div>
   </div>
@@ -90,7 +90,22 @@
 45
 46
 47
-48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -103,6 +118,14 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -117,6 +140,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,62 +161,65 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { connect } from 'react-redux';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable react/jsx-no-bind */
+import React, { Component } from "react";
+import { Link } from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import { connect } from "react-redux";
 import PropTypes from 'prop-types';
-import UserNavigation from '../navbar/UserNavigation.jsx';
-import GuestNavigation from '../navbar/GuestNavigation.jsx';
+import fetchMeal from '../../actions/menu';
+// import fetchSingleMenu from '../../actions/getSingleMenu';
+// import placeOrder from '../../actions/placeOrder';
 &nbsp;
-class Header extends Component {
+class Menu extends Component {
+  componentDidMount = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+    const { action } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+<span class="cstat-no" title="statement not covered" >    action.fetchMeals();</span>
+  };
 <span class="fstat-no" title="function not covered" >  re</span>nder() {
-    const { auth } = <span class="cstat-no" title="statement not covered" >this.props;</span>
+    const { menu } = <span class="cstat-no" title="statement not covered" >this.props;</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;div className="nav"&gt;
-        &lt;div className="nav-brand"&gt;
-          &lt;i className="fa fa-bars menu-icon" /&gt;
-          &lt;Link to="/"&gt;
-            &lt;img src="./src/images/logo-1.png" /&gt;
-          &lt;/Link&gt;
-        &lt;/div&gt;
-        &lt;div className="left"&gt;
-          &lt;div className="nav-items"&gt;
-            &lt;Link to="/"&gt;Home&lt;/Link&gt;
-            &lt;Link to="/menu"&gt;Menu&lt;/Link&gt;
-            &lt;a href=".#"&gt;Contact&lt;/a&gt;
-            &lt;a href=".#"&gt;About&lt;/a&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div className="right"&gt;
-          &lt;div className="nav-items" id="items-right"&gt;
-            {
-              auth.isAuthenticated ? &lt;UserNavigation /&gt; : &lt;GuestNavigation /&gt;
-            }
-          &lt;/div&gt;
+      &lt;div&gt;
+        &lt;p className="menu-text"&gt;Menu&lt;/p&gt;
+        &lt;div className="grid-wrapper"&gt;
+        { menu.map(<span class="fstat-no" title="function not covered" >me</span>al =&gt; (
+            (
+<span class="cstat-no" title="statement not covered" >            &lt;div className="order-details" key={meal.id}&gt;</span>
+              &lt;img src={`../src/${meal.image}`} key={meal.image}/&gt;
+              &lt;h3&gt;{meal.price}&lt;/h3&gt;
+              &lt;p&gt;{meal.name}&lt;/p&gt;
+              &lt;Link to={`/menu/${meal.id}`} className='bt'&gt;Place order&lt;/Link&gt;
+            &lt;/div&gt;
+            )
+          )
+        )}   
         &lt;/div&gt;
       &lt;/div&gt;
     );
   }
 }
 &nbsp;
-Header.propTypes = {
-  auth: PropTypes.instanceOf(Object)
+Menu.propTypes = {
+  menu: PropTypes.instanceOf(Array),
+  action: PropTypes.instanceOf(Object)
 };
 &nbsp;
 const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
-auth: state.auth
+  menu: state.menuReducer.menu
 });
 &nbsp;
-export default connect(mapStateToProps, null)(Header);
+const matchDispatchToProps = <span class="fstat-no" title="function not covered" >di</span>spatch =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
+  action: bindActionCreators(
+    {
+      fetchMeals: fetchMeal,
+      // placeOrder,
+    },
+    dispatch
+  )
+});
+&nbsp;
+export default connect(mapStateToProps, matchDispatchToProps)(Menu);
+&nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -193,7 +229,7 @@ export default connect(mapStateToProps, null)(Header);
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 06 2019 11:47:06 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
-<script src="../../../../prettify.js"></script>
+<script src="../../../prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -201,6 +237,6 @@ window.onload = function () {
         }
 };
 </script>
-<script src="../../../../sorter.js"></script>
+<script src="../../../sorter.js"></script>
 </body>
 </html>

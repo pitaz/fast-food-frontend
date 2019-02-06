@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import {reducer as toastrReducer} from 'react-redux-toastr';
 import auth from './auth';
+import menuReducer from './menuReducer';
 import { LOG_OUT_USER } from '../actions/types';
 
 const appReducer = combineReducers({ 
-  auth, 
+  auth,
+  menuReducer, 
   toastr: toastrReducer
  });
 
