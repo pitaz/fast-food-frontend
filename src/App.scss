@@ -562,7 +562,7 @@ select[name="filter"] {
 }
 .table {
   display: table;
-  /* width: 80%; */
+  width: 80%;
   border: 1px solid black;
 }
 .table-header {
@@ -577,6 +577,7 @@ select[name="filter"] {
 }
 .table-cell {
   display: table-cell;
+  text-align: center
 }
 .nav .nav-brand img {
   width: 120px;

@@ -3,12 +3,14 @@ import {reducer as toastrReducer} from 'react-redux-toastr';
 import auth from './auth';
 import menuReducer from './menuReducer';
 import placeOrderReducer from './placeOrderReducer';
+import viewOrderHistory from './viewOrderHistory';
 import { LOG_OUT_USER } from '../actions/types';
 
 const appReducer = combineReducers({ 
   auth,
   menuReducer, 
   placeOrderReducer,
+  viewOrderHistory,
   toastr: toastrReducer
  });
 

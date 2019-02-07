@@ -34,6 +34,7 @@ class Header extends Component {
             <div className="nav-items">
               <Link to="/">Home</Link>
               <Link to="/menu">Menu</Link>
+              {auth.isAuthenticated ? <Link to="/order-history">Orders</Link> : ''}
               <a href=".#">Contact</a>
               <a href=".#">About</a>
             </div>

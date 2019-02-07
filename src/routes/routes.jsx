@@ -8,7 +8,7 @@ import Footer from '../components/UI/footer/Footer.jsx';
 import SignIn from "../components/Pages/SignIn.jsx";
 import SignUp from "../components/Pages/SignUp.jsx";
 import SingleMenuOption from "../components/Pages/SingleMenuOption.jsx";
-import SideBar from '../components/UI/sidebar/Sidebar.jsx';
+import ViewOrderHistory from '../components/Pages/ViewOrderHistory.jsx';
 
 const routes = () => (
     <div>
@@ -19,6 +19,7 @@ const routes = () => (
         <Route exact path='/signin' component={SignIn} />
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/menu/:id' component={SingleMenuOption} />
+        <Route exact path='/order-history' component={ViewOrderHistory} />
       </Switch>
       <Footer />
       <ReduxToastr />
