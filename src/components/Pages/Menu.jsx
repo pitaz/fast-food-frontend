@@ -23,7 +23,7 @@ class Menu extends Component {
             (
             <div className="order-details" key={meal.id}>
               <img src={`../src/${meal.image}`} key={meal.image}/>
-              <h3>{meal.price}</h3>
+              <h3>NGN {meal.price}</h3>
               <p>{meal.name}</p>
               <Link to={`/menu/${meal.id}`} className='bt'>Place order</Link>
             </div>
