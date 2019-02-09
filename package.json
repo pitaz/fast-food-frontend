@@ -4,9 +4,10 @@
   "description": "An online fast food app",
   "main": "webpack.config.js",
   "scripts": {
+    "heroku-postbuild": "rimraf dist && npm run build",
     "start": "node index.js",
     "start:dev": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.config.prod.js",
     "test": "nyc jest --coverage --updateSnapshot",
     "test:watch": "nyc jest --coverage --watchAll",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls"
