@@ -2,7 +2,8 @@ import * as types from "../actions/types";
 
 const initialState = {
   menu: [],
-  singleMenu: null
+  singleMenu: null,
+  error: {}
 };
 
 export default (state = initialState, action) => {

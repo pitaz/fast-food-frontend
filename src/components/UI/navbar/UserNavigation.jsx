@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import logout from '../../../actions/auth/logout';
 
-class UserNavigation extends Component {
+export class UserNavigation extends Component {
   logout = () => {
     const { logout } = this.props;
     logout();

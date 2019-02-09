@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">40% </span>
+        <span class="strong">28.57% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>2/5</span>
+        <span class='fraction'>2/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/2</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/4</span>
+        <span class='fraction'>2/5</span>
       </div>
     </div>
   </div>
@@ -90,7 +90,30 @@
 45
 46
 47
-48</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,7 +123,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,6 +164,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,40 +179,58 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import UserNavigation from '../navbar/UserNavigation.jsx';
 import GuestNavigation from '../navbar/GuestNavigation.jsx';
+import SideBar from '../sidebar/Sidebar.jsx';
 &nbsp;
 class Header extends Component {
+  state = {
+    show: false
+  }
+&nbsp;
+  toggle = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    this.setState(<span class="fstat-no" title="function not covered" >pr</span>evState =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+      show: !prevState.show,
+    }));
+  };
+&nbsp;
 <span class="fstat-no" title="function not covered" >  re</span>nder() {
     const { auth } = <span class="cstat-no" title="statement not covered" >this.props;</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;div className="nav"&gt;
-        &lt;div className="nav-brand"&gt;
+      &lt;div&gt;
+        &lt;div className="nav"&gt;
+          &lt;div className="nav-brand"&gt;
+          &lt;span onClick={this.toggle} &gt;
           &lt;i className="fa fa-bars menu-icon" /&gt;
-          &lt;Link to="/"&gt;
-            &lt;img src="./src/images/logo-1.png" /&gt;
-          &lt;/Link&gt;
-        &lt;/div&gt;
-        &lt;div className="left"&gt;
-          &lt;div className="nav-items"&gt;
-            &lt;Link to="/"&gt;Home&lt;/Link&gt;
-            &lt;Link to="/menu"&gt;Menu&lt;/Link&gt;
-            &lt;a href=".#"&gt;Contact&lt;/a&gt;
-            &lt;a href=".#"&gt;About&lt;/a&gt;
+          &lt;/span&gt;
+            &lt;Link to="/"&gt;
+              &lt;img src="./src/images/logo-1.png" /&gt;
+            &lt;/Link&gt;
+          &lt;/div&gt;
+          &lt;div className="left"&gt;
+            &lt;div className="nav-items"&gt;
+              &lt;Link to="/"&gt;Home&lt;/Link&gt;
+              &lt;Link to="/menu"&gt;Menu&lt;/Link&gt;
+              {auth.isAuthenticated ? &lt;Link to="/order-history"&gt;Orders&lt;/Link&gt; : ''}
+              &lt;a href=".#"&gt;Contact&lt;/a&gt;
+              &lt;a href=".#"&gt;About&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div className="right"&gt;
+            &lt;div className="nav-items" id="items-right"&gt;
+              {
+                auth.isAuthenticated ? &lt;UserNavigation /&gt; : &lt;GuestNavigation /&gt;
+              }
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
-        &lt;div className="right"&gt;
-          &lt;div className="nav-items" id="items-right"&gt;
-            {
-              auth.isAuthenticated ? &lt;UserNavigation /&gt; : &lt;GuestNavigation /&gt;
-            }
-          &lt;/div&gt;
-        &lt;/div&gt;
+        &lt;SideBar show={this.state.show} /&gt;
       &lt;/div&gt;
     );
   }
 }
 &nbsp;
 Header.propTypes = {
-  auth: PropTypes.instanceOf(Object)
+  auth: PropTypes.instanceOf(Object),
+  toggle: PropTypes.func,
 };
 &nbsp;
 const mapStateToProps = <span class="fstat-no" title="function not covered" >st</span>ate =&gt; (<span class="cstat-no" title="statement not covered" >{</span>
@@ -190,7 +244,7 @@ export default connect(mapStateToProps, null)(Header);
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 06 2019 13:07:27 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Feb 09 2019 07:42:26 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../../../prettify.js"></script>

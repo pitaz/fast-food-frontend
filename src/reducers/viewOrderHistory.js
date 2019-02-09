@@ -17,7 +17,12 @@ export default (state = initialState, action) => {
       return {
 				...state,
 				errors: action.error
-			};
+      };
+      case types.CANCEL_ORDER:
+      return {
+      ...state,
+      orders: state.orders.filter(item => item.id !== action.orderId )
+    };
 			default: return state;
   }
 };

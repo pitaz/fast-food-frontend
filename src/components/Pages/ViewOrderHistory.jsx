@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import fetchOrderHistory from '../../actions/viewOrderHistory';
+import cancelOrder from '../../actions/cancelOrder';
 
 
 class ViewOrderHistory extends Component {
@@ -13,28 +14,25 @@ class ViewOrderHistory extends Component {
     action.fetchOrderHistory();
   };
   render() {
-    const { orders } = this.props;
+    const { orders, action} = this.props;
     let count = 1;
     return (
       <div>
       <p className="menu-text">Orders</p>
       <div className="table-wrapper">
              <p id="error-text"></p>
-             <table className="table" id="tb">
-                 <tr className="table-header">
-                     <td className="table-cell">S/N</td>
-                     <td className="table-cell">Order</td>
-                     <td className="table-cell">Amount</td>
-                     <td className="table-cell">Quantity</td>
-                     <td className="table-cell">Status</td>
-                     <td className="table-cell">Action</td>
-                 </tr>
+             <div className="table" id="tb">
+                 <div className="table-header">
+                     <div className="table-cell">Order</div>
+                     <div className="table-cell">Amount</div>
+                     <div className="table-cell">Quantity</div>
+                     <div className="table-cell">Status</div>
+                     <div className="table-cell">Action</div>
+                 </div>
                  { orders.map(orders => (
                    (
-                    <tr key={orders.id} className="table-row" id="row">
-                      <div key={orders.id} className="table-cell">
-                       {count++}
-                      </div>
+                    <div key={orders.id} className="table-row" id="row">
+                   
                       <div key={orders.meal} className="table-cell">
                       {orders.meal}
                       </div>
@@ -48,13 +46,14 @@ class ViewOrderHistory extends Component {
                       <span>{orders.status}</span>
                       </div>
                       <div key={orders.id} className="table-cell">
-                      <button className="button">cancel</button>
+                      <button className="button" onClick={() => action.cancelOrder(orders.id)}
+                      >cancel</button>
                       </div>
-                    </tr>
+                    </div>
                   )
                 )
               )}
-             </table>
+             </div>
      </div>
     </div>
     );
@@ -75,6 +74,7 @@ const matchDispatchToProps = dispatch => ({
   action: bindActionCreators(
     {
       fetchOrderHistory,
+      cancelOrder,
     },
     dispatch
   )

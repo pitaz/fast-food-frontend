@@ -2,6 +2,7 @@
 
 exports[`select_reducer renders correctly 1`] = `
 Object {
+  "error": Object {},
   "menu": undefined,
   "singleMenu": null,
 }
@@ -9,6 +10,7 @@ Object {
 
 exports[`select_reducer returns the correct state 1`] = `
 Object {
+  "error": Object {},
   "menu": Array [],
   "singleMenu": null,
 }

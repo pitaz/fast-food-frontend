@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import jwt from 'jsonwebtoken';
 import * as types from '../types';
-import signin from './signIn';
+import signIn from './signIn';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -30,7 +30,7 @@ describe('signin Action', () => {
       type: types.SET_CURRENT_USER,
       user: jwt.decode(token),
     }];
-    store.dispatch(signin(signinData))
+    store.dispatch(signIn(signinData))
       .then(() => {
         expect(store.getActions()).toEqual(expected);
       });
@@ -47,7 +47,7 @@ describe('signin Action', () => {
       type: types.SET_CURRENT_USER_FAIL,
       error: 'signin unsuccessful',
     }];
-    store.dispatch(signin(signinData))
+    store.dispatch(signIn(signinData))
       .then(() => {
         expect(store.getActions()).toEqual(expected);
       });
@@ -62,9 +62,9 @@ describe('signin Action', () => {
 
     const expected = [{
       type: types.REMOVE_CURRENT_USER_ERROR,
-      error: '',
+      error: 'Bad request',
     }];
-    store.dispatch(signin(signinData))
+    store.dispatch(signIn(signinData))
       .then(() => {
         expect(store.getActions()).toEqual(expected);
       });

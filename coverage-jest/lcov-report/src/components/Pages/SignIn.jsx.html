@@ -20,24 +20,24 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">12% </span>
+        <span class="strong">40% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/25</span>
+        <span class='fraction'>10/25</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">41.67% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/12</span>
+        <span class='fraction'>5/12</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">0% </span>
+        <span class="strong">33.33% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>2/6</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">13.04% </span>
+        <span class="strong">43.48% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>3/23</span>
+        <span class='fraction'>10/23</span>
       </div>
     </div>
   </div>
@@ -181,7 +181,8 @@
 136
 137
 138
-139</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+139
+140</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -191,6 +192,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,22 +224,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -231,14 +232,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -327,16 +329,16 @@ import PropTypes from "prop-types";
 import { validateSignInInput } from "../../validations/validations";
 import signIn, { removeErrorMsg } from "../../actions/auth/signIn";
 &nbsp;
-class SignUp extends Component {
+export class SignIn extends Component {
   state = {
     email: '',
     password: '',
     errors: {}
   };
 &nbsp;
-  onChange = <span class="fstat-no" title="function not covered" >ev</span>ent =&gt; {
-    const { errors } = <span class="cstat-no" title="statement not covered" >this.state;</span>
-<span class="cstat-no" title="statement not covered" >    if (errors[event.target.name]) {</span>
+  onChange = event =&gt; {
+    const { errors } = this.state;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (errors[event.target.name]) {
       const newErrors = <span class="cstat-no" title="statement not covered" >Object.assign({}, errors);</span>
 <span class="cstat-no" title="statement not covered" >      delete newErrors[event.target.name];</span>
 <span class="cstat-no" title="statement not covered" >      this.setState({</span>
@@ -344,7 +346,7 @@ class SignUp extends Component {
         errors: newErrors
       });
     } else {
-<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+      this.setState({
         [event.target.name]: event.target.value
       });
     }
@@ -368,15 +370,15 @@ class SignUp extends Component {
 <span class="cstat-no" title="statement not covered" >    return isValid;</span>
   };
 &nbsp;
-<span class="fstat-no" title="function not covered" >  re</span>nder() {
-    const { auth, error } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-    const { email, password, errors } = <span class="cstat-no" title="statement not covered" >this.state;</span>
+  render() {
+    const { auth, error } = this.props;
+    const { email, password, errors } = this.state;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (auth) {</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (auth) {
 <span class="cstat-no" title="statement not covered" >      return &lt;Redirect to="/menu" /&gt;;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
       &lt;div className="container"&gt;
         &lt;div className="wrapper card"&gt;
     
@@ -386,7 +388,7 @@ class SignUp extends Component {
               (error &amp;&amp; error.message) ? (
                 // &lt;div className="error-cont" id="error"&gt;
                 // &lt;span id="closebtn"&gt;&amp;times;&lt;/span&gt; 
-                  &lt;p id="error-message"&gt;{error.message}&lt;/p&gt;
+<span class="branch-0 cbranch-no" title="branch not covered" >                  &lt;p id="error-message"&gt;{error.message}&lt;/p&gt;</span>
                 // &lt;/div&gt;
               ) : ''
             }
@@ -397,8 +399,9 @@ class SignUp extends Component {
                 &lt;b&gt;Email&lt;/b&gt;
               &lt;/label&gt;
               &lt;input
-                type="email"
+              id="nnn"
                 className="email"
+                type="email"
                 placeholder="Email"
                 name="email"
                 field="email"
@@ -432,7 +435,7 @@ class SignUp extends Component {
   }
 }
 &nbsp;
-SignUp.propTypes = {
+SignIn.propTypes = {
   auth: PropTypes.bool,
   error: PropTypes.instanceOf(Object),
   action: PropTypes.instanceOf(Object)
@@ -456,14 +459,14 @@ const matchDispatchToProps = <span class="fstat-no" title="function not covered"
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(SignUp);
+)(SignIn);
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Feb 06 2019 13:07:27 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Feb 09 2019 07:42:26 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>
