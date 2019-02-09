@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from 'react-router-dom';
 import ReduxToastr from 'react-redux-toastr';
+import NotFoundPage from '../components/Pages/NotFound.jsx';
 import Landing from '../components/Pages/Landing.jsx';
 import Menu from "../components/Pages/Menu.jsx";
 import Header from '../components/UI/header/Header.jsx';
@@ -20,6 +21,7 @@ const routes = () => (
         <Route exact path='/signup' component={SignUp} />
         <Route exact path='/menu/:id' component={SingleMenuOption} />
         <Route exact path='/order-history' component={ViewOrderHistory} />
+        <Route component={NotFoundPage} />
       </Switch>
       <Footer />
       <ReduxToastr />
