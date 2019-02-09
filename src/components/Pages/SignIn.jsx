@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { validateSignInInput } from "../../validations/validations";
 import signIn, { removeErrorMsg } from "../../actions/auth/signIn";
 
-class SignUp extends Component {
+export class SignIn extends Component {
   state = {
     email: '',
     password: '',
@@ -76,8 +76,9 @@ class SignUp extends Component {
                 <b>Email</b>
               </label>
               <input
-                type="email"
+              id="nnn"
                 className="email"
+                type="email"
                 placeholder="Email"
                 name="email"
                 field="email"
@@ -111,7 +112,7 @@ class SignUp extends Component {
   }
 }
 
-SignUp.propTypes = {
+SignIn.propTypes = {
   auth: PropTypes.bool,
   error: PropTypes.instanceOf(Object),
   action: PropTypes.instanceOf(Object)
@@ -135,4 +136,4 @@ const matchDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   matchDispatchToProps
-)(SignUp);
+)(SignIn);

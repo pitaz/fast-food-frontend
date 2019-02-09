@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { validateSignUpInput } from "../../validations/validations";
 import signUp, { removeErrorMsg } from "../../actions/auth/signUp";
 
-class SignUp extends Component {
+export class SignUp extends Component {
   state = {
     email: '',
     name: '',

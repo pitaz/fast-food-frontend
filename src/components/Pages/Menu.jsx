@@ -49,7 +49,6 @@ const matchDispatchToProps = dispatch => ({
   action: bindActionCreators(
     {
       fetchMeals: fetchMeal,
-      // placeOrder,
     },
     dispatch
   )

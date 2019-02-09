@@ -16,6 +16,7 @@ module.exports = {
     "!**/src/index.jsx",
     "!**/src/utils/**",
     "!**/src/validations/**",
+    "!**/src/reducers/rootReducer.js",
     "!**/src/store/configureStore.js",
     "!**/index.js"
   ],

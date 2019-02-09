@@ -5,9 +5,9 @@ export const getMeals = menu => ({
   type: types.GET_MEALS,
   menu,
 });
-export const getMealsError = errors => ({
+export const getMealsError = error => ({
   type: types.GET_MEALS,
-  errors,
+  error,
 });
 
 const fetchMeal = () => (dispatch) => {
@@ -16,6 +16,8 @@ const fetchMeal = () => (dispatch) => {
       dispatch(getMeals(res.data.data.items));
 		}
 	).catch((error) => {
+		console.log(error);
+		
 		dispatch(getMealsError(error.response.data));
 	});
 };

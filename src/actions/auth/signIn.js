@@ -4,7 +4,6 @@ import Cookie from "cookies-js";
 import toastr from "toastr";
 import {
   SET_CURRENT_USER,
-  SIGN_UP_ERRORS,
 	REMOVE_ERROR_MESSAGE,
 	SET_CURRENT_USER_FAIL
 } from "../types";

@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import expect from 'expect';
 import * as types from '../actions/types';
 import auth from './auth';
 
@@ -32,7 +33,7 @@ describe('select_reducer', () => {
       user: {
         userId: 1,
         email: 'email',
-        username: 'wale',
+        username: 'peter',
         image: 'https://hardwaremassive.com/s…cture.jpg',
         roleId: 1,
       },
@@ -43,7 +44,7 @@ describe('select_reducer', () => {
       user: {
         userId: 1,
         email: 'email',
-        username: 'wale',
+        username: 'peter',
         image: 'https://hardwaremassive.com/s…cture.jpg',
         roleId: 1,
       },

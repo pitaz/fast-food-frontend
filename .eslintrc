@@ -42,12 +42,7 @@
           "eventHandlerPrefix": "handle",
           "eventHandlerPropPrefix": "on"
       }],
-    "react/wrap-multilines": [{
-          "declaration": true,
-          "assignment": true,
-          "return": true,
-          "arrow": true
-      }],
+    "react/wrap-multilines": 0,
     "react/require-extension": [0, { "extensions": [".jsx"] }],
     "react/jsx-boolean-value": 1,
     "react/jsx-closing-bracket-location": 0,

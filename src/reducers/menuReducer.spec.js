@@ -5,7 +5,7 @@ import menuReducer from './menuReducer';
 describe('select_reducer', () => {
   it('renders with initial state', () => {
     const action = { type: types.GET_MEALS };
-    const initialState = { menu: undefined, singleMenu: null };
+    const initialState = { error: {}, menu: undefined, singleMenu: null };
     expect(menuReducer(undefined, action)).toEqual(initialState);
   });
 
