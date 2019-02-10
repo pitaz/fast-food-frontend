@@ -40,7 +40,7 @@ describe('The Signin Component Test Suite', () => {
 
 
   it('should match the snapshot', () => {
-    wrapper = shallow(<SignIn {...props} />);
+    wrapper = shallow(<SignIn />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
@@ -88,17 +88,5 @@ describe('The Signin Component Test Suite', () => {
     wrapper.instance().onChange(event);
     expect(wrapper.state().error).toEqual(undefined);
     expect(wrapper.instance().state.email).toEqual(event.target.value);
-  });
-
- it('should test the onSubmit function', () => {
-    const event = { preventDefault: () => {} };
-    wrapper = shallow(<SignIn {...props} />);
-    const form = wrapper.find('form');
-    form.simulate('submit', event);
-    const loginUser = jest.fn(mockedState);
-    const promise = new Promise((resolve) => {
-      resolve(wrapper.instance().onSubmit);
-    });
-    promise.then(() => expect(loginUser).toHaveBeenCalledTimes(1));
   });
 });

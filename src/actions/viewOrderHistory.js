@@ -10,9 +10,8 @@ export const getOrderHistoryError = errors => ({
   errors,
 });
 
-const fetchOrderHistory = () => (dispatch) => {
-  
-  return axios.get('https://fast-food-pitaz.herokuapp.com/api/v1/users/1/orders').then(
+const fetchOrderHistory = (userId) => (dispatch) => {
+  return axios.get(`https://fast-food-pitaz.herokuapp.com/api/v1/users/${userId}/orders`).then(
     (res) => {
       dispatch(getOrderHistory(res.data.data.items));
 		}

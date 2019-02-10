@@ -4,7 +4,8 @@ import { Link, Redirect } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { validateSignUpInput } from "../../validations/validations";
-import signUp, { removeErrorMsg } from "../../actions/auth/signUp";
+import signUp from "../../actions/auth/signUp";
+import SignUpForm from "../UI/form/SignUpForm.jsx";
 
 export class SignUp extends Component {
   state = {
@@ -50,8 +51,7 @@ export class SignUp extends Component {
   };
 
   render() {
-    const { auth, error } = this.props;
-    const { name, email, password, password_confirmation, errors } = this.state;
+    const { auth } = this.props;
 
     if (auth) {
       return <Redirect to="/menu" />;
@@ -60,78 +60,12 @@ export class SignUp extends Component {
     return (
       <div className="container">
         <div className="wrapper card">
-    
-          <form>
-            <div className="card-header">
-            {
-              (error && error.message) ? (
-                // <div className="error-cont" id="error">
-                // <span id="closebtn">&times;</span> 
-                  <p id="error-message">{error.message}</p>
-                // </div>
-              ) : ''
-            }
-              <p>Sign up</p>
-            </div>
-            <div className="card-content form-group">
-              <label>
-                <b>Username</b>
-              </label>
-              <input
-                type="text"
-                placeholder="Enter Username"
-                name="name"
-                field="name"
-                value={name}
-                onChange={this.onChange}
-                required
-              />
-              <p className="error">{errors.name}</p>
-              <label>
-                <b>Email</b>
-              </label>
-              <input
-                type="email"
-                placeholder="Email"
-                name="email"
-                field="email"
-                value={email}
-                onChange={this.onChange}
-                required
-              />
-              <p className="error">{errors.email}</p>
-              <label>
-                <b>Password</b>
-              </label>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                name="password"
-                field="password"
-                onChange={this.onChange}
-                value={password}
-                required
-              />
-              <p className="error">{errors.password}</p>
-              <label>
-                <b>Confirm Password</b>
-              </label>
-              <input
-                type="password"
-                placeholder="Confirm Password"
-                name="password_confirmation"
-                field="password_confirmation"
-                onChange={this.onChange}
-                value={password_confirmation}
-                required
-              />
-              <p className="error">{errors.password_confirmation}</p>
-              <button type="submit" onClick={this.onSubmit} >Submit </button>
-              <h5>
-                Already Registered? <Link to="/signin">Sign In</Link>
-              </h5>
-            </div>
-          </form>
+        <SignUpForm 
+        {...this.state}
+        {...this.props}
+        onChange={this.onChange}
+        onSubmit={this.onSubmit}
+        /> 
         </div>
       </div>
     );
@@ -152,8 +86,7 @@ const mapStateToProps = state => ({
 const matchDispatchToProps = dispatch => ({
   action: bindActionCreators(
     {
-      signupUser: signUp,
-      deleteError: removeErrorMsg
+      signupUser: signUp
     },
     dispatch
   )

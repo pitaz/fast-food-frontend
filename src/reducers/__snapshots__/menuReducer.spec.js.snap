@@ -8,7 +8,31 @@ Object {
 }
 `;
 
+exports[`select_reducer renders correctly 2`] = `
+Object {
+  "error": undefined,
+  "menu": Array [],
+  "singleMenu": null,
+}
+`;
+
+exports[`select_reducer renders correctly 3`] = `
+Object {
+  "error": undefined,
+  "menu": Array [],
+  "singleMenu": null,
+}
+`;
+
 exports[`select_reducer returns the correct state 1`] = `
+Object {
+  "error": Object {},
+  "menu": Array [],
+  "singleMenu": null,
+}
+`;
+
+exports[`select_reducer returns the correct state 2`] = `
 Object {
   "error": Object {},
   "menu": Array [],

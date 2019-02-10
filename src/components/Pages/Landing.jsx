@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-// import Menu from "./Menu.jsx";
+import barbecue from '../../../public/images/barbecue-blur-chicken-209406.jpg';
+import bike from '../../../public/images/action-adult-bike-417005.jpg';
+import chickenDish from '../../../public/images/chicken-fried-rice-28524-1.jpg';
+import bankingcomputer from '../../../public/images/banking-buy-computer-34577.jpg';
 
 class Landing extends Component {
   render() {
@@ -8,7 +11,7 @@ class Landing extends Component {
         <div className="jumbo-section">
           <div className="jb-content-wrapper">
             <img
-              src="./src/images/barbecue-blur-chicken-209406.jpg"
+              src={barbecue}
               alt="jumbo image"
             />
             <p className="text">Welcome to Fast Food Fast</p>
@@ -29,7 +32,7 @@ class Landing extends Component {
 
         <div className="grid-wrapper">
           <div className="order-details">
-            <img src="./src/images/action-adult-bike-417005.jpg" />
+            <img src={bike} />
             <h3 className="menu-services-txt">We make fast deliveries</h3>
             <p className="menu-services-txt">
               With over 50 branches nationwide we provide fast door-to-door
@@ -40,7 +43,7 @@ class Landing extends Component {
           </div>
 
           <div className="order-details">
-            <img src="./src/images/banking-buy-computer-34577.jpg" />
+            <img src={bankingcomputer} />
             <h3 className="menu-services-txt">
               Safe and secured online payments
             </h3>
@@ -53,7 +56,7 @@ class Landing extends Component {
           </div>
 
           <div className="order-details">
-            <img src="./src/images/chicken-dinner-dish-236781.jpg" />
+            <img src={chickenDish} />
             <h3 className="menu-services-txt">Mouth watering dishes</h3>
             <p className="menu-services-txt">
               We provide wide range of mouth-watering dishes

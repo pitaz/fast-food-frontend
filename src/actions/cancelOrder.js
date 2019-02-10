@@ -15,7 +15,7 @@ const  cancelOrder = (orderId) => (dispatch) => {
 	return axios.delete(`https://fast-food-pitaz.herokuapp.com/api/v1/orders/${orderId}`).then(
 		(res) => {
       dispatch(cancelOrderSuccess(orderId));
-      toastr.warning('Order has been cancelled');
+      // toastr.warning('Order has been cancelled');
 		}
 	).catch((error) => {
 		dispatch(cancelOrderError(error.response));

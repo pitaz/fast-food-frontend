@@ -39,3 +39,19 @@ Object {
   "user": Object {},
 }
 `;
+
+exports[`select_reducer returns the correct state 4`] = `
+Object {
+  "error": Object {},
+  "isAuthenticated": false,
+  "user": undefined,
+}
+`;
+
+exports[`select_reducer returns the correct state 5`] = `
+Object {
+  "error": Object {},
+  "isAuthenticated": false,
+  "user": Object {},
+}
+`;

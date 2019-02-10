@@ -10,7 +10,7 @@ exports[`The Signin Component Test Suite should match the snapshot 1`] = `
     >
       <img
         alt="jumbo image"
-        src="./src/images/barbecue-blur-chicken-209406.jpg"
+        src={Object {}}
       />
       <p
         className="text"
@@ -52,7 +52,7 @@ exports[`The Signin Component Test Suite should match the snapshot 1`] = `
       className="order-details"
     >
       <img
-        src="./src/images/action-adult-bike-417005.jpg"
+        src={Object {}}
       />
       <h3
         className="menu-services-txt"
@@ -72,7 +72,7 @@ exports[`The Signin Component Test Suite should match the snapshot 1`] = `
       className="order-details"
     >
       <img
-        src="./src/images/banking-buy-computer-34577.jpg"
+        src={Object {}}
       />
       <h3
         className="menu-services-txt"
@@ -92,7 +92,7 @@ exports[`The Signin Component Test Suite should match the snapshot 1`] = `
       className="order-details"
     >
       <img
-        src="./src/images/chicken-dinner-dish-236781.jpg"
+        src={Object {}}
       />
       <h3
         className="menu-services-txt"

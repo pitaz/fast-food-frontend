@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { validateSignInInput } from "../../validations/validations";
 import signIn, { removeErrorMsg } from "../../actions/auth/signIn";
+import SignInForm from '../UI/form/SignInForm.jsx';
 
 export class SignIn extends Component {
   state = {
@@ -49,8 +50,7 @@ export class SignIn extends Component {
 
   render() {
     const { auth, error } = this.props;
-    const { email, password, errors } = this.state;
-
+  
     if (auth) {
       return <Redirect to="/menu" />;
     }
@@ -58,54 +58,12 @@ export class SignIn extends Component {
     return (
       <div className="container">
         <div className="wrapper card">
-    
-          <form>
-            <div className="card-header">
-            {
-              (error && error.message) ? (
-                // <div className="error-cont" id="error">
-                // <span id="closebtn">&times;</span> 
-                  <p id="error-message">{error.message}</p>
-                // </div>
-              ) : ''
-            }
-              <p>Sign In</p>
-            </div>
-            <div className="card-content form-group">
-              <label>
-                <b>Email</b>
-              </label>
-              <input
-              id="nnn"
-                className="email"
-                type="email"
-                placeholder="Email"
-                name="email"
-                field="email"
-                value={email}
-                onChange={this.onChange}
-                required
-              />
-              <p className="error">{errors.email}</p>
-              <label>
-                <b>Password</b>
-              </label>
-              <input
-                type="password"
-                placeholder="Enter Password"
-                name="password"
-                field="password"
-                onChange={this.onChange}
-                value={password}
-                required
-              />
-              <p className="error">{errors.password}</p>
-              <button type="submit" onClick={this.onSubmit} >Submit </button>
-              <h5>
-                Already Registered? <Link to="/signup">Sign Up</Link>
-              </h5>
-            </div>
-          </form>
+        <SignInForm 
+        {...this.state}
+        {...this.props}
+        onChange={this.onChange}
+        onSubmit={this.onSubmit}
+        /> 
         </div>
       </div>
     );
@@ -126,8 +84,7 @@ const mapStateToProps = state => ({
 const matchDispatchToProps = dispatch => ({
   action: bindActionCreators(
     {
-      signinUser: signIn,
-      deleteError: removeErrorMsg
+      signinUser: signIn
     },
     dispatch
   )

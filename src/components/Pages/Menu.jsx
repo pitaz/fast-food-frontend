@@ -22,7 +22,7 @@ class Menu extends Component {
         { menu.map(meal => (
             (
             <div className="order-details" key={meal.id}>
-              <img src={`../src/${meal.image}`} key={meal.image}/>
+              <img src={`../../../public/${meal.image}`} key={meal.image}/>
               <h3>NGN {meal.price}</h3>
               <p>{meal.name}</p>
               <Link to={`/menu/${meal.id}`} className='bt'>Place order</Link>

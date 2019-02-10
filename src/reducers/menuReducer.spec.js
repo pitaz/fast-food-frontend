@@ -18,4 +18,17 @@ describe('select_reducer', () => {
     const action = { type: types.GET_MEALS, menu: [] };
     expect(menuReducer(undefined, action)).toMatchSnapshot();
   });
+  it('renders correctly', () => {
+    const action = { type: types.GET_MEALS_ERROR };
+    expect(menuReducer(undefined, action)).toMatchSnapshot();
+  });
+
+  it('returns the correct state', () => {
+    const action = { type: types.GET_MEALS_ERROR, error: {} };
+    expect(menuReducer(undefined, action)).toMatchSnapshot();
+  });
+  it('renders correctly', () => {
+    const action = { type: types.GET_MEALS_ERROR_CLEAR };
+    expect(menuReducer(undefined, action)).toMatchSnapshot();
+  });
 });
