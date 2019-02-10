@@ -43,19 +43,15 @@ export class SignUp extends Component {
 
   isValid = () => {
     const { errors, isValid } = validateSignUpInput(this.state);
-    if (!isValid) {
-      this.setState({ errors, password: "", password_confirmation: "" });
-    }
-
+    if (!isValid) this.setState({ errors, password: "", password_confirmation: "" });
+  
     return isValid;
   };
 
   render() {
     const { auth } = this.props;
 
-    if (auth) {
-      return <Redirect to="/menu" />;
-    }
+    if (auth) return <Redirect to="/menu" />;
 
     return (
       <div className="container">

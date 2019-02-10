@@ -4,7 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import PropTypes from "prop-types";
 import { validateSignInInput } from "../../validations/validations";
-import signIn, { removeErrorMsg } from "../../actions/auth/signIn";
+import signIn from "../../actions/auth/signIn";
 import SignInForm from '../UI/form/SignInForm.jsx';
 
 export class SignIn extends Component {
@@ -41,19 +41,15 @@ export class SignIn extends Component {
 
   isValid = () => {
     const { errors, isValid } = validateSignInInput(this.state);
-    if (!isValid) {
-      this.setState({ errors, password: ""});
-    }
+    if (!isValid) this.setState({ errors, password: ""});
 
     return isValid;
   };
 
   render() {
-    const { auth, error } = this.props;
+    const { auth } = this.props;
   
-    if (auth) {
-      return <Redirect to="/menu" />;
-    }
+    if (auth) return <Redirect to="/menu" />;
 
     return (
       <div className="container">

@@ -24,4 +24,7 @@ describe('The Signin Component Test Suite', () => {
     expect(wrapper.length).toBe(1);
     expect(wrapper.find(NotFound)).toBeDefined();
   });
+  it('should render email input and pass it onChange method', () => {
+    expect(wrapper.find('.container').length).toBe(1);
+  });
 });
