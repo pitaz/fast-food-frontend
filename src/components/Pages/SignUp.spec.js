@@ -75,4 +75,10 @@ describe('The SignUp Component Test Suite', () => {
     expect(wrapper.state().error).toEqual(undefined);
     expect(wrapper.instance().state.email).toEqual(event.target.value);
   });
+  it('should render email input and pass it onChange method', () => {
+    expect(wrapper.find('.container').length).toBe(1);
+  });
+  it('should render email input and pass it onChange method', () => {
+    expect(wrapper.find('.wrapper').length).toBe(1);
+  });
 });

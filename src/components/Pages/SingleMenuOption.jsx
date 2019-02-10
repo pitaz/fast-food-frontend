@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
 import placeOrder from '../../actions/placeOrder';
 import fetchSingleMenu from '../../actions/getSingleMenu';
+import mealImage from '../../../public/images/EGUSI-SOUP-EFO-ELEGUSI-ed.jpg';
 
 export class SingelMenuOption extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ render() {
         {(menu && menu.id && (
           <div className="card-content">
 
-            <img id="image"  src={`../src/${menu.image}`}/>
+            <img id="image"  src={mealImage}/>
             <h3 id="price">{`NGN${menu.price}`}</h3>
             <p id="meal">{menu.name}</p>
             <label>Quantity</label>

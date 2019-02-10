@@ -15,12 +15,11 @@ class ViewOrderHistory extends Component {
     action.fetchOrderHistory(userId);
   };
   render() {
-    const { orders } = this.props;
+    // const { orders } = this.props;
     return (
       <div className='history'>
       <p className="menu-text">Orders</p>
       <div className="table-wrapper">
-             <p id="error-text"></p>
              <div className="table" id="tb">
                  <div className="table-header">
                      <div className="table-cell">Order</div>
@@ -29,7 +28,7 @@ class ViewOrderHistory extends Component {
                      <div className="table-cell">Status</div>
                      <div className="table-cell">Action</div>
                  </div>
-                    <TableRow {...this.props} key={`a${orders.id}`} />
+                    <TableRow {...this.props} key={`a${this.props.orders.id}`} />
              </div>
      </div>
     </div>

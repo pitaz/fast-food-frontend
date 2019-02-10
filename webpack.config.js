@@ -21,13 +21,20 @@ module.exports = {
         test: /\.(css|sass|scss)$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      // {
+      //   test: /\.(png|jpg|gif)$/,
+      //   loader: 'file-loader',
+      //   options: {
+      //     publicPath: 'public/images',
+      //   },
+      // },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
         use: [{
-          loader: 'url-loader',
+          loader: 'url-loader', 
           options: {
             limit: 8000,
-            name: 'images/[hash]-[name].[ext]'
+            name: 'images/[hash]-[name].[ext]',
           }
         }]
       }
