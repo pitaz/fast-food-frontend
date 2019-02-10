@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The SigninForm Component Test Suite should match the snapshot 1`] = `
+<div>
+  <form>
+    <div
+      className="card-header"
+    >
+      <p>
+        Sign In
+      </p>
+    </div>
+    <div
+      className="card-content form-group"
+    >
+      <label>
+        <b>
+          Email
+        </b>
+      </label>
+      <TextInput
+        className="email"
+        field="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        required={true}
+        type="email"
+        value="Heimdal"
+      />
+      <label>
+        <b>
+          Password
+        </b>
+      </label>
+      <TextInput
+        field="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="Enter Password"
+        required={true}
+        type="password"
+      />
+      <button
+        type="submit"
+      >
+        Submit 
+      </button>
+      <h5>
+        Already Registered? 
+        <Link
+          replace={false}
+          to="/signup"
+        >
+          Sign Up
+        </Link>
+      </h5>
+    </div>
+  </form>
+</div>
+`;

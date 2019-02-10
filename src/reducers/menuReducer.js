@@ -14,6 +14,11 @@ export default (state = initialState, action) => {
         menu: action.menu
       };
 
+      case types.GET_MEALS_ERROR:
+      return {
+        ...state,
+        error: action.error
+      };
       case types.GET_SINGLE_MENU:
       return {
         ...state,

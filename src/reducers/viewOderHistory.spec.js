@@ -18,4 +18,12 @@ describe('select_reducer', () => {
     const action = { type: types.FETCH_ORDER_HISTORY, orders: {}, errors: {}};
     expect(viewOrderHistory(undefined, action)).toMatchSnapshot();
   });
+  it('returns the correct state', () => {
+    const action = { type: types.CANCEL_ORDER, orders: {}};
+    expect(viewOrderHistory(undefined, action)).toMatchSnapshot();
+  });
+  it('returns the correct state', () => {
+    const action = { type: types.CANCEL_ORDER_FAIL, error: {}};
+    expect(viewOrderHistory(undefined, action)).toMatchSnapshot();
+  });
 });

@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>31/31</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>16/16</span>
+        <span class='fraction'>31/31</span>
       </div>
     </div>
   </div>
@@ -60,22 +60,52 @@
 15
 16
 17
-18</td><td class="line-coverage quiet"><span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
-<span class="cline-any cline-yes">19x</span>
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33</td><td class="line-coverage quiet"><span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export const SET_CURRENT_USER = 'SET_CURRENT_USER';
 export const SIGN_UP_ERRORS = 'SIGN_UP_ERRORS';
@@ -83,6 +113,8 @@ export const REMOVE_ERROR_MESSAGE = 'REMOVE_ERROR_MESSAGE';
 export const SET_CURRENT_USER_FAIL = 'SET_CURRENT_USER_FAIL';
 export const LOG_OUT_USER = 'LOG_OUT_USER';
 export const GET_MEALS = 'GET_MEALS ';
+export const GET_MEALS_ERROR = 'GET_MEALS_ERROR ';
+export const GET_MEALS_ERROR_CLEAR = 'GET_MEALS_ERROR ';
 export const PLACE_ORDER_SUCCESS = 'PLACE_ORDER_SUCCESS';
 export const PLACE_ORDER_FAIL = 'PLACE_ORDER_FAIL';
 export const GET_ORDER_HISTORY_SUCCESS = 'GET_ORDER_HISTORY_SUCCESS';
@@ -93,6 +125,19 @@ export const FETCH_ORDER_HISTORY = 'FETCH_ORDER_HISTORY';
 export const FETCH_ORDER_HISTORY_FAIL = 'FETCH_ORDER_HISTORY_FAIL';
 export const CANCEL_ORDER = 'CANCEL_ORDER';
 export const CANCEL_ORDER_FAIL = 'CANCEL_ORDER_FAIL';
+export const CANCEL_ORDER_ADMIN = 'CANCEL_ORDER';
+export const CANCEL_ORDER_FAIL_ADMIN = 'CANCEL_ORDER_FAIL';
+export const CREATE_MENU_OPTION_ADMIN = 'CREATE_MENU_OPTION_ADMIN';
+export const CREATE_MENU_OPTION_ADMIN_FAIL = 'CREATE_MENU_OPTION_ADMIN_FAIL';
+export const DELETE_MEAL_OPTION = 'DELETE_MEAL_OPTION';
+export const DELETE_MEAL_OPTION_FAIL = 'DELETE_MEAL_OPTION_FAIL';
+export const UPDATE_MEAL_OPTION = 'DELETE_MEAL_OPTION';
+export const UPDATE_MEAL_OPTION_FAIL = 'DELETE_MEAL_OPTION_FAIL';
+export const UPDATE_ORDER_STATUS = 'DELETE_MEAL_OPTION';
+export const UPDATE_ORDER_STATUS_FAIL = 'DELETE_MEAL_OPTION_FAIL';
+export const DELETE_ORDER_STATUS = 'DELETE_MEAL_OPTION';
+export const DELETE_ORDER_STATUS_FAIL = 'DELETE_MEAL_OPTION_FAIL';
+export const CLEAR_ERRORS = 'DELETE_MEAL_OPTION_FAIL';
 &nbsp;
 &nbsp;</pre></td></tr>
 </table></pre>
@@ -100,7 +145,7 @@ export const CANCEL_ORDER_FAIL = 'CANCEL_ORDER_FAIL';
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Feb 09 2019 07:42:26 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sun Feb 10 2019 15:07:43 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import barbecue from '../../images/barbecue-blur-chicken-209406.jpg';
-import bike from '../../images/action-adult-bike-417005.jpg';
-import chickenDish from '../../images/chicken-fried-rice-28524-1.jpg';
-import bankingcomputer from '../../images/banking-buy-computer-34577.jpg'
+import barbecue from '../../../public/images/barbecue-blur-chicken-209406.jpg';
+import bike from '../../../public/images/action-adult-bike-417005.jpg';
+import chickenDish from '../../../public/images/chicken-fried-rice-28524-1.jpg';
+import bankingcomputer from '../../../public/images/banking-buy-computer-34577.jpg';
 
 class Landing extends Component {
   render() {

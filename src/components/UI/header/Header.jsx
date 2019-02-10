@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import UserNavigation from '../navbar/UserNavigation.jsx';
 import GuestNavigation from '../navbar/GuestNavigation.jsx';
 import SideBar from '../sidebar/Sidebar.jsx';
-import logo from '../../../images/logo-1.png';
+// import logo from '../../../images/logo-1.png';
 
 class Header extends Component {
   state = {
@@ -28,7 +28,7 @@ class Header extends Component {
           <i className="fa fa-bars menu-icon" />
           </span>
             <Link to="/">
-              <img src={logo} />
+              <img src='../../../../public/images/logo-1.png'/>
             </Link>
           </div>
           <div className="left">

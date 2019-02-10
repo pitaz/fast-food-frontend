@@ -6,18 +6,18 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 import fetchOrderHistory from '../../actions/viewOrderHistory';
 import cancelOrder from '../../actions/cancelOrder';
+import TableRow from '../UI/table/TableRow.jsx';
 
 
 class ViewOrderHistory extends Component {
   componentDidMount = () => {
-    const { action } = this.props;
-    action.fetchOrderHistory();
+    const { action, userId } = this.props;
+    action.fetchOrderHistory(userId);
   };
   render() {
-    const { orders, action} = this.props;
-    let count = 1;
+    const { orders } = this.props;
     return (
-      <div>
+      <div className='history'>
       <p className="menu-text">Orders</p>
       <div className="table-wrapper">
              <p id="error-text"></p>
@@ -29,30 +29,7 @@ class ViewOrderHistory extends Component {
                      <div className="table-cell">Status</div>
                      <div className="table-cell">Action</div>
                  </div>
-                 { orders.map(orders => (
-                   (
-                    <div key={orders.id} className="table-row" id="row">
-                   
-                      <div key={orders.meal} className="table-cell">
-                      {orders.meal}
-                      </div>
-                      <div key={orders.price} className="table-cell">
-                      {orders.price}
-                      </div>
-                      <div key={orders.quantity} className="table-cell">
-                      {orders.quantity}
-                      </div>
-                      <div  key={orders.status} className="table-cell">
-                      <span>{orders.status}</span>
-                      </div>
-                      <div key={orders.id} className="table-cell">
-                      <button className="button" onClick={() => action.cancelOrder(orders.id)}
-                      >cancel</button>
-                      </div>
-                    </div>
-                  )
-                )
-              )}
+                    <TableRow {...this.props} key={`a${orders.id}`} />
              </div>
      </div>
     </div>
@@ -62,6 +39,7 @@ class ViewOrderHistory extends Component {
 
 ViewOrderHistory.propTypes = {
   orders: PropTypes.instanceOf(Array),
+  userId: PropTypes.number,
   action: PropTypes.instanceOf(Object)
 };
 

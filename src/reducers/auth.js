@@ -1,8 +1,6 @@
 import isEmpty from "is-empty";
 import {
   SET_CURRENT_USER,
-  SIGN_UP_ERRORS,
-  REMOVE_ERROR_MESSAGE,
   SET_CURRENT_USER_FAIL,
 	LOG_OUT_USER
 } from "../actions/types";
@@ -28,18 +26,6 @@ export default (state = initialState, action) => {
 				isAuthenticated: false,
 				user: {},
 				error: action.error
-			};
-
-			case SIGN_UP_ERRORS:{
-      return {
-				...state,
-				isAuthenticated: false,
-				error: action.error
-			};
-		}
-			case REMOVE_ERROR_MESSAGE:
-      return {
-				error: {}
 			};
 
 			case LOG_OUT_USER:

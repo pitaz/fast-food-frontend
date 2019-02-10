@@ -24,24 +24,11 @@ export const registrationError = error => ({
   error
 });
 
-export const removeErrorMsgCompleted = user => ({
-  type: REMOVE_ERROR_MESSAGE,
-  user
-});
-
-export const removeErrorMsg = () => (dispatch) => {
- dispatch(removeErrorMsgCompleted());
-};
-
 const signUp = data => (dispatch) => {
 	return axios.post('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', data).then(
 		(res) => {
-			const { token } = res.data.data;
-			const { message } = res.data;
-			Cookie.set('token', token);
-			toastr.success(message);
-			dispatch(setCurrent(jwt.decode(token)));
-			return true;
+			Cookie.set('token', res.data.data.token);
+			dispatch(setCurrent(jwt.decode(res.data.data.token)));
 		}
 	).catch((error) => {
 		dispatch(setCurrentUserError(error.response.data));

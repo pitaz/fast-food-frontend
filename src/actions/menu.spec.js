@@ -37,4 +37,23 @@ describe('signin Action', () => {
       });
     done();
   });
+
+  it('creates SET_CURRENT_USER when signin action is succesful', (done) => {
+    moxios.stubRequest(`${process.env.BASE_URL_PROD}/menu`, {
+      status: 200,
+      meal: {
+        meal: 'egusi soup'
+      },
+    });
+
+    const expected = [{
+      type: types.GET_MEALS_ERROR,
+      error: 'Failed to fetch meal'
+    }];
+    store.dispatch(menu())
+      .then(() => {
+        expect(store.getActions()).toEqual(expected);
+      });
+    done();
+  });
 });

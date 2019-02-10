@@ -13,3 +13,17 @@ Object {
   "orders": Object {},
 }
 `;
+
+exports[`select_reducer returns the correct state 2`] = `
+Object {
+  "errors": Object {},
+  "orders": Array [],
+}
+`;
+
+exports[`select_reducer returns the correct state 3`] = `
+Object {
+  "errors": Object {},
+  "orders": Array [],
+}
+`;

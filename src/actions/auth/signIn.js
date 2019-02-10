@@ -18,24 +18,13 @@ export const setCurrentUserError = error => ({
   error
 });
 
-export const removeErrorMsgCompleted = user => ({
-  type: REMOVE_ERROR_MESSAGE,
-  user
-});
-
-export const removeErrorMsg = () => (dispatch) => {
- dispatch(removeErrorMsgCompleted());
-};
 
 const signIn = data => (dispatch) => {
 	return axios.post('https://fast-food-pitaz.herokuapp.com/api/v1/auth/login', data).then(
 		(res) => {
 			const { token } = res.data.data;
-			const { message } = res.data;
 			Cookie.set('token', token);
-			toastr.success(message);
 			dispatch(setCurrentUser(jwt.decode(token)));
-			return true;
 		}
 	).catch((error) => {
 		dispatch(setCurrentUserError(error.response.data));

@@ -62,6 +62,17 @@ describe('select_reducer', () => {
     expect(auth(undefined, action)).toMatchSnapshot();
   });
 
+
+  it('returns the correct state', () => {
+    const action = { type: types.SIGN_UP_ERRORS, error: {} };
+    expect(auth(undefined, action)).toMatchSnapshot();
+  });
+
+
+  it('returns the correct state', () => {
+    const action = { type: types.SET_CURRENT_USER, error: {} };
+    expect(auth(undefined, action)).toMatchSnapshot();
+  });
   it('should set user if user login was unsuccessful', () => {
     const initialState = {
       isAuthenticated: false,

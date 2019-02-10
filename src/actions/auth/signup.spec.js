@@ -1,75 +1,98 @@
-/* eslint-disable no-dupe-keys */
-/* eslint-disable no-undef */
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
-import jwt from 'jsonwebtoken';
-import * as types from '../types';
-import signup from './signUp';
+import expect from 'expect';
+import * as actions from '../types';
+import signUp from './signUp';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const store = mockStore({});
 
-describe('signup Action', () => {
-  beforeEach(() => moxios.install());
-  afterEach(() => moxios.uninstall());
-  const signupData = {
-    username: 'john',
-    email: 'peter@mail.com',
-    password: '12345dde',
-    confirm_password: '12345dde'
+describe('getPosts actions', () => {
+  beforeEach(function () {
+    moxios.install();
+    store.clearActions();
+  });
+
+  afterEach(function () {
+    moxios.uninstall();
+  });
+
+  const payload = {
+    email: 'egusi',
+    password: 'fast'
   };
-  const token = 'hggfdgAFFG.ljgghghghhPOUm_KI';
 
-  it('creates SET_CURRENT_USER when signin action is succesful', (done) => {
-    moxios.stubRequest(`${process.env.BASE_URL_PROD}/auth/signup`, {
+  it('returns single menu option', () => {
+    moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/login', {
       status: 200,
-      response: 'Signin was succesful',
+      response: 'successfully signed in',
     });
 
-    const expected = [{
-      type: types.SET_CURRENT_USER,
-      user: jwt.decode(token),
-    }];
-    store.dispatch(signup(signupData))
-      .then(() => {
-        expect(store.getActions()).toEqual(expected);
-      });
-    done();
+    const expected = [
+      {
+        type: actions.SET_CURRENT_USER,
+        user: {
+          email: 'email',
+          password: 'fast',
+          password_confirmation: 'fast'
+        }
+      }];
+
+    store.dispatch(signUp(payload)).then(() => {
+      expect(store.getActions()).toEqual(expected);
+    });
   });
 
-  it('creates SET_CURRENT_USER_FAIL when signup is not successful', (done) => {
-    moxios.stubRequest(`${process.env.BASE_URL_PROD}/auth/signup`, {
+  it('returns 404 when menu is not found', () => {
+    moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', {
       status: 404,
-      response: 'signup unsuccessful',
+      response: 'User not found'
     });
 
-    const expected = [{
-      type: types.SET_CURRENT_USER_FAIL,
-      error: 'signup unsuccessful',
-    }];
-    store.dispatch(signup(signupData))
-      .then(() => {
-        expect(store.getActions()).toEqual(expected);
-      });
-    done();
+    const expected = [
+      {
+        type: actions.SET_CURRENT_USER_FAIL,
+        error: undefined,
+      }];
+
+    store.dispatch(signUp(payload)).then(() => {
+      expect(store.getActions()).toEqual(expected);
+    });
   });
 
-  it('creates SET_CURRENT_USER_FAIL when signup is not successful', (done) => {
-    moxios.stubRequest(`${process.env.BASE_URL_PROD}/auth/signup`, {
-      status: 400,
-      response: 'signup unsuccessful',
+  it('returns single menu option', () => {
+    moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', {
+      status: 500,
+      response: 'server error',
     });
 
-    const expected = [{
-      type: types.REMOVE_CURRENT_USER_ERROR,
-      error: '',
-    }];
-    store.dispatch(signup(signupData))
-      .then(() => {
-        expect(store.getActions()).toEqual(expected);
-      });
-    done();
+    const expected = [
+      {
+        type: actions.SET_CURRENT_USER_FAIL,
+        error: undefined,
+      }];
+
+    store.dispatch(signUp(payload)).then(() => {
+      expect(store.getActions()).toEqual(expected);
+    });
+  });
+
+  it('returns single menu option', () => {
+    moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', {
+      status: 401,
+      response: 'order error',
+    });
+
+    const expected = [
+      {
+        type: actions.SET_CURRENT_USER_FAIL,
+        error: undefined,
+      }];
+
+    store.dispatch(signUp(payload)).then(() => {
+      expect(store.getActions()).toEqual(expected);
+    });
   });
 });

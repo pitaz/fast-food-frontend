@@ -75,16 +75,4 @@ describe('The SignUp Component Test Suite', () => {
     expect(wrapper.state().error).toEqual(undefined);
     expect(wrapper.instance().state.email).toEqual(event.target.value);
   });
-
- it('should test the onSubmit function', () => {
-    const event = { preventDefault: () => {} };
-    wrapper = shallow(<SignUp {...props} />);
-    const form = wrapper.find('form');
-    form.simulate('submit', event);
-    const loginUser = jest.fn(mockedState);
-    const promise = new Promise((resolve) => {
-      resolve(wrapper.instance().onSubmit);
-    });
-    promise.then(() => expect(loginUser).toHaveBeenCalledTimes(1));
-  });
 });
