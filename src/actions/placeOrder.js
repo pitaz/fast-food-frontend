@@ -17,8 +17,8 @@ const placeOrder = (payload, history) => dispatch => {
   return axios.post('https://fast-food-pitaz.herokuapp.com/api/v1/orders', payload).then(
 		(res) => {
       dispatch(placeOderSuccess(res.data.data));
-      toastr.success('Success', res.data.message);
-      history.push('/menu');
+      toastr.success('Success', 'order placed successfully');
+      history.push('/order-history');
 		}
 	).catch((error) => {
     if (error.response.status === 401) message = 'You must be logged in to place an order';

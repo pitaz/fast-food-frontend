@@ -19,6 +19,8 @@ class ViewOrderHistory extends Component {
     return (
       <div className='history'>
       <p className="menu-text">Orders</p>
+      <hr />
+      {this.props.orders.length === 0 ? <h1 className="center">No orders found</h1>:
       <div className="table-wrapper">
              <div className="table" id="tb">
                  <div className="table-header">
@@ -31,6 +33,7 @@ class ViewOrderHistory extends Component {
                     <TableRow {...this.props} key={`a${this.props.orders.id}`} />
              </div>
      </div>
+    }
     </div>
     );
   }

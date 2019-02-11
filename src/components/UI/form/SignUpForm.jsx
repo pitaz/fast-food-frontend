@@ -5,7 +5,7 @@ import ErrorMessage from '../error/ErrorMessage.jsx';
 import TextInput from '../input/TextInput.jsx';
 
 const SignUpForm = (props) => {
-  const { error, email, errors, password, password_confirmation, onChange, onSubmit} = props;
+  const { error, email, errors, name, password, password_confirmation, onChange, onSubmit} = props;
  return (
   <div>
   <form>
@@ -71,9 +71,9 @@ const SignUpForm = (props) => {
     />
     {!error || errors === undefined ? '' : <ErrorMessage errors={errors.password_confirmation} />}
     <button type="submit" onClick={onSubmit} >Submit </button>
-    <h5>
+    <p>
       Already Registered? <Link to="/signin">Sign In</Link>
-    </h5>
+    </p>
   </div>
 </form>
   </div>
@@ -81,6 +81,7 @@ const SignUpForm = (props) => {
 };
 
 SignUpForm.propTypes = {
+  name: PropTypes.string,
   email: PropTypes.string,
   password: PropTypes.string,
   password_confirmation: PropTypes.string,

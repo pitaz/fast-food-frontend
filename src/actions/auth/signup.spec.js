@@ -54,7 +54,7 @@ describe('getPosts actions', () => {
     const expected = [
       {
         type: actions.SET_CURRENT_USER_FAIL,
-        error: undefined,
+        error: 'User not found',
       }];
 
     store.dispatch(signUp(payload)).then(() => {
@@ -62,7 +62,7 @@ describe('getPosts actions', () => {
     });
   });
 
-  it('returns single menu option', () => {
+  it('returns server error during signup', () => {
     moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', {
       status: 500,
       response: 'server error',
@@ -71,7 +71,7 @@ describe('getPosts actions', () => {
     const expected = [
       {
         type: actions.SET_CURRENT_USER_FAIL,
-        error: undefined,
+        error: 'server error',
       }];
 
     store.dispatch(signUp(payload)).then(() => {
@@ -79,7 +79,7 @@ describe('getPosts actions', () => {
     });
   });
 
-  it('returns single menu option', () => {
+  it('returns unauthorized during signup', () => {
     moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/auth/signup', {
       status: 401,
       response: 'order error',
@@ -88,7 +88,7 @@ describe('getPosts actions', () => {
     const expected = [
       {
         type: actions.SET_CURRENT_USER_FAIL,
-        error: undefined,
+        error: 'order error',
       }];
 
     store.dispatch(signUp(payload)).then(() => {

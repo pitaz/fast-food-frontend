@@ -46,7 +46,7 @@ exports[`The SigninForm Component Test Suite should match the snapshot 1`] = `
       >
         Submit 
       </button>
-      <h5>
+      <p>
         Already Registered? 
         <Link
           replace={false}
@@ -54,7 +54,7 @@ exports[`The SigninForm Component Test Suite should match the snapshot 1`] = `
         >
           Sign Up
         </Link>
-      </h5>
+      </p>
     </div>
   </form>
 </div>
