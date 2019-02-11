@@ -11,8 +11,7 @@ import mealImage from '../../../public/images/EGUSI-SOUP-EFO-ELEGUSI-ed.jpg';
 
 class Menu extends Component {
   componentDidMount = () => {
-    const { action } = this.props;
-    action.fetchMeals();
+    this.props.action.fetchMeals();
   };
   render() {
     return (

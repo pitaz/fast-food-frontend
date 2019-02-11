@@ -38,4 +38,17 @@ describe('The Signin Component Test Suite', () => {
     const wrapper = shallow(<ViewOrderHistory {...props} />);
     expect(wrapper.exists()).toBe(true);
   });
+  
+  it(`lifecycle method should have been called`, () => {
+    const componentDidMount = jest.fn();
+    const componentWillUnmount = jest.fn();
+  
+    expect(componentDidMount.mock.calls.length).toBe(0);
+    expect(componentWillUnmount.mock.calls.length).toBe(0);
+
+    wrapper.unmount();
+  
+    expect(componentDidMount.mock.calls.length).toBe(0);
+    expect(componentWillUnmount.mock.calls.length).toBe(0);
+  });
 });
