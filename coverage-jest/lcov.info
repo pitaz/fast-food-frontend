@@ -226,7 +226,7 @@ FN:16,(anonymous_1)
 FN:22,(anonymous_2)
 FN:22,(anonymous_3)
 FN:24,(anonymous_4)
-FN:29,(anonymous_5)
+FN:28,(anonymous_5)
 FNF:6
 FNH:5
 FNDA:0,(anonymous_0)
@@ -241,9 +241,8 @@ DA:22,4
 DA:23,4
 DA:25,1
 DA:26,0
-DA:27,0
-DA:30,3
-LF:8
+DA:29,3
+LF:7
 LH:6
 BRF:0
 BRH:0
@@ -450,14 +449,13 @@ DA:13,0
 DA:18,0
 DA:19,0
 DA:23,0
-DA:29,0
 DA:30,0
 DA:41,0
 DA:42,0
 DA:58,2
 DA:66,2
 DA:71,2
-LF:12
+LF:11
 LH:3
 BRDA:34,0,0,0
 BRDA:34,0,1,0

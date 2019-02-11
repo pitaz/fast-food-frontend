@@ -16,7 +16,7 @@ export class SignIn extends Component {
 
   onChange = event => {
     const { errors } = this.state;
-    if (errors[event.target.name]) {
+    if (this.state.errors[event.target.name]) {
       const newErrors = Object.assign({}, errors);
       delete newErrors[event.target.name];
       this.setState({

@@ -22,9 +22,8 @@ export const setCurrentUserError = error => ({
 const signIn = data => (dispatch) => {
 	return axios.post('https://fast-food-pitaz.herokuapp.com/api/v1/auth/login', data).then(
 		(res) => {
-			const { token } = res.data.data;
-			Cookie.set('token', token);
-			dispatch(setCurrentUser(jwt.decode(token)));
+			Cookie.set('token', res.data.data.token);
+			dispatch(setCurrentUser(jwt.decode(res.data.data.token)));
 		}
 	).catch((error) => {
 		dispatch(setCurrentUserError(error.response.data));

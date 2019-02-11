@@ -26,26 +26,26 @@ handleChange = (e) => {
 }
 
 render() {
-  const { action, menu, userId, history } = this.props;
+  // const { action, menu, userId, history } = this.props;
   return (
     <div className="container">
       <p className="menu-text">Order checkout</p>
         <div className="card-wrapper card" id="checkout-section">
-        {(menu && menu.id && (
+        {(this.props.menu && this.props.menu.id && (
           <div className="card-content">
 
             <img id="image"  src={mealImage}/>
-            <h3 id="price">{`NGN${menu.price}`}</h3>
-            <p id="meal">{menu.name}</p>
+            <h3 id="price">{`NGN${this.props.menu.price}`}</h3>
+            <p id="meal">{this.props.menu.name}</p>
             <label>Quantity</label>
             <input type="number" name='qty' value={this.state.qty} min="1" onChange={e => this.handleChange(e)} />
-            <button onClick={() => action
+            <button onClick={() => this.props.action
               .placeOrder({
-                meal: `${menu.name}`,
-                userId: `${userId}`,
+                meal: `${this.props.menu.name}`,
+                userId: `${this.props.userId}`,
                 quantity: `${this.state.qty}`,
-                price: `${menu.price}`
-              }, history)}>Place order</button>
+                price: `${this.props.menu.price}`
+              }, this.props.history)}>Place order</button>
               
               </div>
               ))}
