@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import barbecue from '../../../public/images/barbecue-blur-chicken-209406.jpg';
 import bike from '../../../public/images/action-adult-bike-417005.jpg';
 import chickenDish from '../../../public/images/chicken-fried-rice-28524-1.jpg';
@@ -20,15 +21,16 @@ class Landing extends Component {
 
         <div className="grid-wrapper welcome-cnt">
           <div className="welcome-msg msg">
+          <p id="sub-header">Welcome</p>
             <p id="header">Fast Food Fast Restaurant</p>
-            <p id="sub-header">Welcome</p>
-            <p id="msg-body">
+            <p className="msg-body">
               Nigeria's number one online/offline Restaurant. We provide a wide
-              range of mouth-watering dishes as well as snacks.
+              range of mouth-watering dishes as well as snacks. To get started 
+              click <Link className='button' to='/signup'>here</Link> to register.
             </p>
+            <p className="msg-body">To place an order or view what we offer view our <Link className='button' to='/menu'>menu</Link> </p>
           </div>
         </div>
-        <div className="parallax content-01" />
 
         <div className="grid-wrapper">
           <div className="order-details">

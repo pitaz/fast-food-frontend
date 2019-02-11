@@ -26,25 +26,43 @@ exports[`The Signin Component Test Suite should match the snapshot 1`] = `
       className="welcome-msg msg"
     >
       <p
-        id="header"
-      >
-        Fast Food Fast Restaurant
-      </p>
-      <p
         id="sub-header"
       >
         Welcome
       </p>
       <p
-        id="msg-body"
+        id="header"
       >
-        Nigeria's number one online/offline Restaurant. We provide a wide range of mouth-watering dishes as well as snacks.
+        Fast Food Fast Restaurant
+      </p>
+      <p
+        className="msg-body"
+      >
+        Nigeria's number one online/offline Restaurant. We provide a wide range of mouth-watering dishes as well as snacks. To get started click 
+        <Link
+          className="button"
+          replace={false}
+          to="/signup"
+        >
+          here
+        </Link>
+         to register.
+      </p>
+      <p
+        className="msg-body"
+      >
+        To place an order or view what we offer view our 
+        <Link
+          className="button"
+          replace={false}
+          to="/menu"
+        >
+          menu
+        </Link>
+         
       </p>
     </div>
   </div>
-  <div
-    className="parallax content-01"
-  />
   <div
     className="grid-wrapper"
   >

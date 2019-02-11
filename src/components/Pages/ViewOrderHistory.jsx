@@ -11,14 +11,14 @@ import TableRow from '../UI/table/TableRow.jsx';
 
 class ViewOrderHistory extends Component {
   componentDidMount = () => {
-    const { action, userId } = this.props;
-    action.fetchOrderHistory(userId);
+    this.props.action.fetchOrderHistory(this.props.userId);
   };
   render() {
-    // const { orders } = this.props;
     return (
       <div className='history'>
       <p className="menu-text">Orders</p>
+      <hr />
+      {this.props.orders.length === 0 ? <h1 className="center">No orders found</h1>:
       <div className="table-wrapper">
              <div className="table" id="tb">
                  <div className="table-header">
@@ -31,6 +31,7 @@ class ViewOrderHistory extends Component {
                     <TableRow {...this.props} key={`a${this.props.orders.id}`} />
              </div>
      </div>
+    }
     </div>
     );
   }

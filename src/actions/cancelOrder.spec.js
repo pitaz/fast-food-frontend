@@ -24,17 +24,10 @@ describe('getPosts actions', () => {
 
   };
 
-  it('returns single menu option', () => {
+  it('cancels a menu o', () => {
     moxios.stubRequest('https://fast-food-pitaz.herokuapp.com/api/v1/orders/1', {
       status: 200,
-      response: {
-        id: 2,
-        name: "Chicken soup",
-        description: "Intercontinental",
-        image: "images/chicken-dinner-dish-236781.jpg",
-        price: 1800,
-        dateCreated: "2019-02-07T10:03:11.553Z"
-      },
+      response: 'menu cancelled',
     });
 
     const expected = [

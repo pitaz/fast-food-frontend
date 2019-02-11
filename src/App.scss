@@ -210,6 +210,7 @@ body {
 
 .order-details {
   width: 30%;
+  margin-bottom: 20px
 }
 
 .order-details img {
@@ -243,7 +244,7 @@ body {
 }
 
 .button {
-  border: none;
+  // border: none;
   outline: 0;
   display: inline-block;
   text-decoration: none;
@@ -251,13 +252,19 @@ body {
   color: white;
   background-color: rgb(175, 22, 22);
   text-align: center;
+  text-decoration: none;
   cursor: pointer;
-  width: 40%;
+  // width: 40%;
   font-size: 18px;
-  margin: 20px;
+  // margin: 20px;
   font-family: "Caviar Dreams", sans-serif;
 }
-
+.btn-hm{
+  margin: 5;
+  padding: 2px;
+  width: 20%;
+  border-radius: 10px
+}
 .welcome-cnt {
   margin: 50px 20px 50px 20px;
 }
@@ -283,14 +290,15 @@ body {
   color: red;
 }
 
-.welcome-msg #msg-body {
+.welcome-msg .msg-body {
+  font-size: 28px;
   text-align: center;
   font-family: "Caviar Dreams", sans-serif;
   padding: 20px;
 }
 
 .welcome-msg #sub-header {
-  font-size: 28px;
+  font-size: 32px;
   text-align: center;
   font-family: "Caviar Dreams", sans-serif;
 }
@@ -308,6 +316,17 @@ body {
     center;
   background-size: cover;
 }
+.btn-action {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  width: 50%;
+  font-size: 0.7em
+}
+.center { 
+  text-align: center
+}
+
 .content-01 p {
   text-align: center;
   font-size: 35px;
@@ -637,6 +656,13 @@ select[name="filter"] {
   .card-wrapper {
     width: 90%;
   }
+  .btn-action {
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 80%;
+    font-size: 0.9em
+  }
   .nav .nav-items a {
     visibility: hidden;
     display: none;
@@ -649,7 +675,8 @@ select[name="filter"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 20px
+    margin-left: 20px;
+    margin-bottom: 20px;
   }
   .wrapper {
     width: 90%;

@@ -1,29 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sidebar Component should match the snapshot 1`] = `
-<div
-  className="sidebar"
-  id="mySidebar"
->
-  <a
-    href="#"
-  >
-    Admin
-  </a>
-  <a
-    href="#"
-  >
-    Menu
-  </a>
-  <a
-    href="#"
-  >
-    Ordered meals
-  </a>
-  <a
-    href="#"
-  >
-     Logout
-  </a>
-</div>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

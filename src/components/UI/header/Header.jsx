@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import UserNavigation from '../navbar/UserNavigation.jsx';
 import GuestNavigation from '../navbar/GuestNavigation.jsx';
 import SideBar from '../sidebar/Sidebar.jsx';
-// import logo from '../../../images/logo-1.png';
+import logo from '../../../../public/images/logo-1.png';
 
 class Header extends Component {
   state = {
@@ -19,7 +19,6 @@ class Header extends Component {
   };
 
   render() {
-    const { auth } = this.props;
     return (
       <div>
         <div className="nav">
@@ -28,14 +27,14 @@ class Header extends Component {
           <i className="fa fa-bars menu-icon" />
           </span>
             <Link to="/">
-              <img src='../../../../public/images/logo-1.png'/>
+              <img src={logo}/>
             </Link>
           </div>
           <div className="left">
             <div className="nav-items">
               <Link to="/">Home</Link>
               <Link to="/menu">Menu</Link>
-              {auth.isAuthenticated ? <Link to="/order-history">Orders</Link> : ''}
+              {this.props.auth.isAuthenticated ? <Link to="/order-history">Orders</Link> : ''}
               <a href=".#">Contact</a>
               <a href=".#">About</a>
             </div>
@@ -43,7 +42,7 @@ class Header extends Component {
           <div className="right">
             <div className="nav-items" id="items-right">
               {
-                auth.isAuthenticated ? <UserNavigation /> : <GuestNavigation />
+                this.props.auth.isAuthenticated ? <UserNavigation /> : <GuestNavigation />
               }
             </div>
           </div>

@@ -16,7 +16,7 @@ export class SignIn extends Component {
 
   onChange = event => {
     const { errors } = this.state;
-    if (errors[event.target.name]) {
+    if (this.state.errors[event.target.name]) {
       const newErrors = Object.assign({}, errors);
       delete newErrors[event.target.name];
       this.setState({
@@ -31,11 +31,10 @@ export class SignIn extends Component {
   };
 
   onSubmit = e => {
-    const { action } = this.props;
     e.preventDefault();
     if (this.isValid()) {
       this.setState({ errors: {} });
-      action.signinUser(this.state);
+      this.props.action.signinUser(this.state);
     }
   };
 
@@ -47,9 +46,7 @@ export class SignIn extends Component {
   };
 
   render() {
-    const { auth } = this.props;
-  
-    if (auth) return <Redirect to="/menu" />;
+    if (this.props.auth) return <Redirect to="/menu" />;
 
     return (
       <div className="container">

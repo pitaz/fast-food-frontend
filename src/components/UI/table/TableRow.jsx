@@ -15,8 +15,8 @@ const TableRow = (props) => {
       <TableCell key={orders.quantity} className="table-cell">{orders.quantity}</TableCell>
       <TableCell key={orders.status} className="table-cell">{orders.status}</TableCell>
       <TableCell key={orders.id} className="table-cell">
-      <button className="button" onClick={() => action.cancelOrder(orders.id)}
-      >cancel</button>
+      <button className='btn-action danger' onClick={() => action.cancelOrder(orders.id)}
+      >delete</button>
       </TableCell>
       </div>
       )

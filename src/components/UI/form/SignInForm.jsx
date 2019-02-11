@@ -48,9 +48,9 @@ const SignInForm = (props) => {
     />
     {!error || errors === undefined ? '' : <ErrorMessage errors={errors.password} />}
     <button type="submit" onClick={onSubmit} >Submit </button>
-    <h5>
+    <p>
       Already Registered? <Link to="/signup">Sign Up</Link>
-    </h5>
+    </p>
   </div>
 </form>
   </div>
