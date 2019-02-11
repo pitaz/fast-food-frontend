@@ -11,11 +11,9 @@ import TableRow from '../UI/table/TableRow.jsx';
 
 class ViewOrderHistory extends Component {
   componentDidMount = () => {
-    const { action, userId } = this.props;
-    action.fetchOrderHistory(userId);
+    this.props.action.fetchOrderHistory(this.props.userId);
   };
   render() {
-    // const { orders } = this.props;
     return (
       <div className='history'>
       <p className="menu-text">Orders</p>

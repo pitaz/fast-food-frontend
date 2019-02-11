@@ -42,9 +42,9 @@ render() {
             <button onClick={() => action
               .placeOrder({
                 meal: `${menu.name}`,
-                  userId: `${userId}`,
-                  quantity: `${this.state.qty}`,
-                  price: `${menu.price}`
+                userId: `${userId}`,
+                quantity: `${this.state.qty}`,
+                price: `${menu.price}`
               }, history)}>Place order</button>
               
               </div>
